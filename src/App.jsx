@@ -16,8 +16,6 @@ function App() {
     <div className="flex flex-col min-h-screen bg-gray-100">
       <Navbar />
       <CategoryMenu />
-
-      {/* Main content grows to push footer down */}
       <main className="container mx-auto px-4 py-8 flex-grow">
         <div className="grid grid-cols-4 gap-6 items-stretch h-full">
           <div className="h-full">
@@ -52,8 +50,6 @@ function App() {
           <Services />
         </div>
       </main>
-
-      {/* Footer always at the bottom */}
       <Footer />  
     </div>
   );

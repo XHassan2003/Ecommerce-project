@@ -65,7 +65,7 @@ export default function DealsAndOffers() {
   return (
     <div className="mt-8">
       <div className="flex flex-col md:flex-row gap-6">
-        {/* Timer Section */}
+        {/* Time */}
         <div className="bg-white rounded-lg p-4 md:w-[220px] h-fit-content">
           <h2 className="text-xl font-semibold">Deals and offers</h2>
           <p className="text-gray-500 text-sm mt-1">Hygiene equipments</p>
@@ -74,12 +74,11 @@ export default function DealsAndOffers() {
           </div>
         </div>
 
-        {/* Products Grid */}
+        {/* deals products */}
         <div className="flex-1">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {deals.map((product) => (
               <div key={product.id} className="bg-white rounded-lg p-4 flex flex-col items-center">
-                {/* Product Image */}
                 <div className="relative w-full mb-3">
                   <img
                     src={product.image}
@@ -87,11 +86,7 @@ export default function DealsAndOffers() {
                     className="w-full h-32 object-contain"
                   />
                 </div>
-
-                {/* Product Name */}
                 <h3 className="text-center text-sm font-medium text-gray-800">{product.name}</h3>
-
-                {/* Discount Percentage (Below Product Name) */}
                 <span className="mt-1 bg-red-100 text-red-500 px-2 py-0.5 rounded-full text-xs font-bold">
                   -{product.discount}%
                 </span>

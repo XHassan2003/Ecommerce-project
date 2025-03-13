@@ -11,17 +11,16 @@ const categories = ["Electronics", "Fashion", "Home", "Books", "Toys"];
 
 export default function Navbar() {
   return (
+    //  Navbar
     <header className="bg-white border-b">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-        {/* Brand Logo */}
         <div className="flex items-center space-x-3">
           <div className="bg-blue-500 text-white p-2 rounded-md flex items-center justify-center">
             <ShoppingBagIcon className="h-5 w-5" />
           </div>
           <h1 className="text-2xl font-bold text-blue-500">Brand</h1>
         </div>
-
-        {/* Search Bar */}
+        {/* search bar */}
         <div className="flex border border-blue-500 rounded-md overflow-hidden w-[600px]">
           <input
             type="text"
@@ -39,7 +38,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* User Actions - Icons with Text Below */}
+        {/* all the icons on navbar */}
         <div className="flex items-center space-x-8 text-gray-500">
           <div className="flex flex-col items-center cursor-pointer">
             <UserIcon className="h-6 w-6" />

@@ -8,10 +8,9 @@ export default function ProductGrid({
 }) {
   return (
     <div className="mt-8 space-y-8">
-      {/* First Grid */}
+      {/* home and outdoor grid */}
       <div className="bg-white rounded-lg shadow border">
         <div className="grid grid-cols-1 md:grid-cols-9">
-          {/* First Banner */}
           <div
             className="col-span-2 relative flex flex-col justify-start p-6 border-r overflow-hidden"
             style={{
@@ -31,8 +30,6 @@ export default function ProductGrid({
               </button>
             </div>
           </div>
-
-          {/* First Product Grid */}
           <div className="col-span-7 grid grid-cols-2 md:grid-cols-4 border-l">
             {products1.slice(0, 8).map((product) => (
               <div
@@ -57,10 +54,9 @@ export default function ProductGrid({
         </div>
       </div>
 
-      {/* Second Grid */}
+      {/* gadgets grid */}
       <div className="bg-white rounded-lg shadow border">
         <div className="grid grid-cols-1 md:grid-cols-9">
-          {/* Second Banner */}
           <div
             className="col-span-2 relative flex flex-col justify-start p-6 border-r overflow-hidden"
             style={{
@@ -80,8 +76,6 @@ export default function ProductGrid({
               </button>
             </div>
           </div>
-
-          {/* Second Product Grid */}
           <div className="col-span-7 grid grid-cols-2 md:grid-cols-4 border-l">
             {products2.slice(0, 8).map((product) => (
               <div

@@ -10,10 +10,10 @@ export default function CategoryMenu() {
   ];
 
   return (
-    <nav className="bg-white border-b">
+    // secondary navbar
+    <nav className="bg-white ">
       <div className="container mx-auto px-4 flex items-center justify-between py-2">
-        {/* Left Side */}
-        <ul className="flex items-center space-x-6 text-gray-700 text-sm">
+        <ul className="flex items-center space-x-6 text-black text-sm">
           <li className="flex items-center space-x-2 cursor-pointer font-medium">
             <MenuIcon className="h-5 w-5" />
             <span>All category</span>
@@ -25,16 +25,11 @@ export default function CategoryMenu() {
             </li>
           ))}
         </ul>
-
-        {/* Right Side */}
         <ul className="flex items-center space-x-6 text-gray-700 text-sm">
-          {/* Language Selector */}
           <li className="flex items-center space-x-1 cursor-pointer font-medium">
             <span>English, USD</span>
             <ChevronDownIcon className="h-4 w-4" />
           </li>
-
-          {/* Shipping Selector */}
           <li className="flex items-center space-x-1 cursor-pointer font-medium">
             <span>Ship to</span>
             <img src="https://flagcdn.com/w40/de.png" alt="Germany Flag" className="h-4 w-6" />

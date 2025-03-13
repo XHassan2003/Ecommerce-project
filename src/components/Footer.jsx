@@ -3,8 +3,8 @@ import { SocialIcon } from "react-social-icons";
 
 const Footer = () => {
   return (
+    /* newsletter area */
     <footer className="text-gray-900">
-      {/* Newsletter Section - Full Width & bg-gray-200 */}
       <div className="bg-gray-200 w-full px-4 py-8 text-center">
         <h2 className="text-lg font-semibold">Subscribe on our newsletter</h2>
         <p className="text-gray-500 text-sm">
@@ -21,11 +21,9 @@ const Footer = () => {
           </button>
         </div>
       </div>
-
-      {/* Main Footer Content - bg-gray-100 */}
+      {/* footer area */}
       <div className="bg-gray-100 border-t border-gray-300">
         <div className="max-w-6xl mx-auto px-4 py-8 grid grid-cols-6 gap-8">
-          {/* Brand Section */}
           <div className="space-y-3 col-span-1">
             <div className="flex items-center space-x-2">
               <h2 className="text-lg font-semibold text-blue-500">Brand</h2>
@@ -41,8 +39,6 @@ const Footer = () => {
               <SocialIcon network="youtube" className="!w-6 !h-6" />
             </div>
           </div>
-
-          {/* Footer Links */}
           <div>
             <h3 className="text-gray-900 font-medium">About</h3>
             <ul className="text-gray-500 text-sm space-y-2">
@@ -82,19 +78,16 @@ const Footer = () => {
               <li>My Orders</li>
             </ul>
           </div>
-
-          {/* Get App Section - Same Row */}
           <div>
             <h3 className="text-gray-900 font-medium">Get app</h3>
             <div className="space-y-2">
-              <img src="/appstore.png" alt="App Store" className="w-28" />
-              <img src="/googleplay.png" alt="Google Play" className="w-28" />
+              <img src="/src/assets/Image/extraa/appstore.png" alt="App Store" className="w-28" />
+              <img src="src/assets/Image/extraa/playstore.png" alt="Google Play" className="w-28" />
             </div>
           </div>
         </div>
       </div>
-
-      {/* Bottom Footer - Full Width & bg-gray-200 */}
+      {/* footer bottom */}
       <div className="bg-gray-200 w-full border-t border-gray-300 py-4">
         <div className="max-w-6xl mx-auto flex justify-between items-center text-sm text-gray-500 px-4">
           <p>© 2023 Ecommerce.</p>

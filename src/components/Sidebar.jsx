@@ -11,6 +11,7 @@ export default function Sidebar() {
   ];
 
   return (
+    // Sidebar (will provide functionality later)
     <div className="bg-white rounded-lg shadow p-4 ">
       <ul className="space-y-2">
         {categories.map((category) => (
