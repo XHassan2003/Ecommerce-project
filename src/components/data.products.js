@@ -30,3 +30,84 @@ export const homeProducts = [
     { id: 9, name: "Blue suit for men leather material", price: "10.30", image: "/src/assets/Image/products/7.png" },
     { id: 10, name: "Blue shirt for travel for men", price: "80.95", image: "/src/assets/Image/products/2.png" },
   ];
+  export const brandproducts = [
+    {
+      id: 1,
+      image: "/src/assets/Image/tech/1.png",
+      title: "Canon EOS 200D Black 18x Zoom",
+      price: 998.00,
+      rating: 4.5,
+      reviews: 154
+    },
+    {
+      id: 2,
+      image: "/src/assets/Image/tech/4.png",
+      title: "GoPro HERO 4K Action Camera",
+      price: 998.00,
+      rating: 4,
+      reviews: 154
+    },
+    {
+      id: 3,
+      image: "/src/assets/Image/tech/3.png",
+      title: "MacBook Pro M2 Space Gray",
+      price: 998.00,
+      originalPrice: 1099.00,
+      rating: 4.5,
+      reviews: 154
+    },
+    {
+      id: 4,
+      image: "/src/assets/Image/tech/2.png",
+      title: "Apple Watch Series 7",
+      price: 998.00,
+      originalPrice: 1099.00,
+      rating: 4,
+      reviews: 154
+    },
+    {
+      id: 5,
+      image: "/src/assets/Image/tech/6.png",
+      title: "Apple AirPods Max",
+      price: 998.00,
+      originalPrice: 1099.00,
+      rating: 4.5,
+      reviews: 154
+    },
+    {
+      id: 6,
+      image: "/src/assets/Image/tech/4.png",
+      title: "Apple AirPods Max",
+      price: 998.00,
+      originalPrice: 1099.00,
+      rating: 4.5,
+      reviews: 154
+    },
+    {
+      id: 7,
+      image: "/src/assets/Image/tech/7.png",
+      title: "Apple Watch Series 7",
+      price: 998.00,
+      originalPrice: 1099.00,
+      rating: 4,
+      reviews: 154
+    },
+    {
+      id: 8,
+      image: "/src/assets/Image/tech/8.png",
+      title: "Apple Watch Series 7",
+      price: 998.00,
+      originalPrice: 1099.00,
+      rating: 4,
+      reviews: 154
+    },
+    {
+      id: 9,
+      image: "/src/assets/Image/tech/1.png",
+      title: "Apple Watch Series 7",
+      price: 998.00,
+      originalPrice: 1099.00,
+      rating: 4,
+      reviews: 154
+    },
+  ];

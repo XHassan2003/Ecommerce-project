@@ -1,23 +1,28 @@
-import React from "react";
-import CategoryMenu from "./components/CategoryMenu";
-import Sidebar from "./components/SideBar";
-import ProductGrid from "./components/ProductGrid";
-import SupplierForm from "./components/SupplierForm";
-import DealsAndOffers from "./components/DealsAndOffers";
-import HeroSection from "./components/HeroSection";
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import { homeProducts, gadgetsProducts, recommendedProducts } from "./components/data.products.js";
-import RecommendedProducts from "./components/RecommendedItems.jsx";
-import Services from "./components/services.jsx";
 import Footer from "./components/footer.jsx";
+import CategoryMenu from "./components/FirstPage/CategoryMenu.jsx";
+import Sidebar from "./components/FirstPage/Sidebar.jsx";
+import ProductGrid from "./components/FirstPage/ProductGrid.jsx";
+import SupplierForm from "./components/FirstPage/SupplierForm.jsx";
+import DealsAndOffers from "./components/FirstPage/DealsAndOffers.jsx";
+import HeroSection from "./components/FirstPage/HeroSection.jsx";
+import RecommendedProducts from "./components/FirstPage/RecommendedItems.jsx";
+import Services from "./components/FirstPage/Services.jsx";
+import ListingHeader from "./components/SecondPage/ListingHeader";
+import Filters from "./components/SecondPage/Filters.jsx";
+import ProductList from "./components/SecondPage/ProductList.jsx";
+import Pagination from "./components/SecondPage/Pagination.jsx";
+import { homeProducts, gadgetsProducts, recommendedProducts, brandproducts } from "./components/data.products.js";
 
-function App() {
+function HomePage() {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100">
+    <>
       <Navbar />
       <CategoryMenu />
-      <main className="container mx-auto px-4 py-8 flex-grow">
-        <div className="grid grid-cols-4 gap-6 items-stretch h-full">
+      <main className="container mx-auto px-4 py-8 flex-grow bg-gray-100">
+        <div className="container grid grid-cols-4 gap-6 items-stretch h-full">
           <div className="h-full">
             <Sidebar />
           </div>
@@ -26,15 +31,16 @@ function App() {
           </div>
         </div>
 
+        <div className="container mx-auto p-4 ">
         <DealsAndOffers />
+        </div>
 
         <div className="container mx-auto p-4 bg-gray-100">
           <ProductGrid
             title1="Home and Outdoor"
-            products1={homeProducts} 
-
+            products1={homeProducts}
             title2="Consumer Electronics and Gadgets"
-            products2={gadgetsProducts} 
+            products2={gadgetsProducts}
           />
         </div>
 
@@ -50,8 +56,46 @@ function App() {
           <Services />
         </div>
       </main>
-      <Footer />  
-    </div>
+      <Footer />
+    </>
+  );
+}
+
+function ProductsPage() {
+  const [isGridView, setIsGridView] = useState(true);
+  
+  return (
+    <>
+      <Navbar />
+      <CategoryMenu />
+      <main className="container mx-auto px-4 py-8 flex-grow bg-gray-100">
+        <div className="flex gap-8">
+          {/* Sidebar (Filters) */}
+          <div className="w-1/4">
+            <Filters />
+          </div>
+
+          {/* Content Section */}
+          <div className="w-3/4 flex flex-col gap-4">
+            <ListingHeader isGridView={isGridView} onViewToggle={setIsGridView} />
+            <ProductList products={brandproducts} isGridView={isGridView} />
+            <Pagination />
+          </div>
+        </div>
+      </main>
+      <Footer />
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/products" element={<ProductsPage />} />
+      </Routes>
+    </Router>
   );
 }
 

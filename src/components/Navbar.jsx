@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   UserIcon,
   MessageSquareIcon,
@@ -14,14 +15,14 @@ export default function Navbar() {
     //  Navbar
     <header className="bg-white border-b">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-        <div className="flex items-center space-x-3">
+        <Link to="/" className="flex items-center space-x-3">
           <div className="bg-blue-500 text-white p-2 rounded-md flex items-center justify-center">
             <ShoppingBagIcon className="h-5 w-5" />
           </div>
           <h1 className="text-2xl font-bold text-blue-500">Brand</h1>
-        </div>
+        </Link>
         {/* search bar */}
-        <div className="flex border border-blue-500 rounded-md overflow-hidden w-[600px]">
+        <div className="flex border border-blue-500  overflow-hidden w-[600px]">
           <input
             type="text"
             placeholder="Search"
@@ -33,7 +34,7 @@ export default function Navbar() {
               <option key={category}>{category}</option>
             ))}
           </select>
-          <button className="w-36  py-1 text-white font-medium bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 transition-all rounded">
+          <button className="w-38  py-1 text-white font-medium bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 transition-all">
             Search
           </button>
         </div>

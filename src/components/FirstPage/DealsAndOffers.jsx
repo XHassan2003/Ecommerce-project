@@ -39,14 +39,19 @@ function CountdownTimer() {
   return (
     <div className="flex gap-2">
       {[
-        { value: time.days, label: "Days" },
-        { value: time.hours, label: "Hour" },
-        { value: time.minutes, label: "Min" },
-        { value: time.seconds, label: "Sec" },
+        { value: time.days, label: 'Days' },
+        { value: time.hours, label: 'Hour' },
+        { value: time.minutes, label: 'Min' },
+        { value: time.seconds, label: 'Sec' },
       ].map((item, index) => (
-        <div key={index} className="bg-gray-700 text-white px-3 py-1 rounded">
-          <div className="text-sm font-semibold text-center">{String(item.value).padStart(2, '0')}</div>
-          <div className="text-[10px] text-center">{item.label}</div>
+        <div
+          key={index}
+          className="bg-gray-700 text-white px-3 py-1 rounded text-center"
+        >
+          <div className="text-sm font-semibold">
+            {String(item.value).padStart(2, '0')}
+          </div>
+          <div className="text-[10px]">{item.label}</div>
         </div>
       ))}
     </div>
@@ -65,8 +70,8 @@ export default function DealsAndOffers() {
   return (
     <div className="mt-8">
       <div className="flex flex-col md:flex-row gap-6">
-        {/* Time */}
-        <div className="bg-white rounded-lg p-4 md:w-[220px] h-fit-content">
+        {/* Countdown Timer */}
+        <div className="bg-white rounded-lg p-4 md:w-[220px] h-fit mt-5">
           <h2 className="text-xl font-semibold">Deals and offers</h2>
           <p className="text-gray-500 text-sm mt-1">Hygiene equipments</p>
           <div className="mt-4">
@@ -74,20 +79,26 @@ export default function DealsAndOffers() {
           </div>
         </div>
 
-        {/* deals products */}
+        {/* Deals Grid */}
         <div className="flex-1">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-            {deals.map((product) => (
-              <div key={product.id} className="bg-white rounded-lg p-4 flex flex-col items-center">
-                <div className="relative w-full mb-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 border border-gray-300">
+            {deals.map((product, index) => (
+              <div
+                key={product.id}
+                className={`flex flex-col items-center p-4 bg-white h-full
+                ${index !== deals.length - 1 ? 'border-r border-gray-300' : ''}`} 
+              >
+                <div className="w-full mb-3 flex justify-center">
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-32 object-contain"
+                    className="w-24 h-24 object-contain"
                   />
                 </div>
-                <h3 className="text-center text-sm font-medium text-gray-800">{product.name}</h3>
-                <span className="mt-1 bg-red-100 text-red-500 px-2 py-0.5 rounded-full text-xs font-bold">
+                <h3 className="text-center text-sm font-medium text-gray-800">
+                  {product.name}
+                </h3>
+                <span className="mt-2 bg-red-100 text-red-500 px-3 py-1 rounded-full text-xs font-bold">
                   -{product.discount}%
                 </span>
               </div>
