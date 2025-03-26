@@ -2,17 +2,11 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import { homeProducts, gadgetsProducts, recommendedProducts, brandproducts } from "./components/data.products.js";
-import { CategoryMenu, Sidebar, ProductGrid, SupplierForm, DealsAndOffers, HeroSection, RecommendedProducts, Services } from "./components/FirstPage";
-import { ListingHeader, Filters, ProductList, Pagination } from "./components/SecondPage";
 import Breadcrumb from "./components/Breadcrumb.jsx";
-import ProductDetails from "./components/ProductDetails.jsx";
-import ProductGallery from "./components/ProductGallery.jsx";
-import SupplierInfo from "./components/SupplierInfo.jsx";
-import ProductInfo from "./components/ProductInfo.jsx";
-import ExampleProducts from "./components/ExampleProducts.jsx";
-import RelatedProducts from "./components/RelatedProducts.jsx";
-import DiscountBanner from "./components/DiscountBanner.jsx";
+import {homeProducts, gadgetsProducts, recommendedProducts, brandproducts } from "./components/data.products.js";
+import {CategoryMenu, Sidebar, ProductGrid, SupplierForm, DealsAndOffers, HeroSection, RecommendedProducts, Services } from "./components/FirstPage";
+import {ListingHeader, Filters, ProductList, Pagination } from "./components/SecondPage";
+import {ProductDetails, ProductGallery, SupplierInfo, ProductInfo, ExampleProducts, RelatedProducts, DiscountBanner,} from "./components/ThirdPage";
 function HomePage() {
   return (
     <>
