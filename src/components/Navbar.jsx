@@ -49,10 +49,13 @@ export default function Navbar() {
             <MessageSquareIcon className="h-6 w-6" />
             <span className="text-xs mt-1">Message</span>
           </div>
-          <div className="flex flex-col items-center cursor-pointer">
-            <HeartIcon className="h-6 w-6" />
+          <Link
+            to="/product-details"
+            className="flex flex-col items-center cursor-pointer"
+          >
+            <HeartIcon className="flex flex-col items-center cursor-pointer" />
             <span className="text-xs mt-1">Orders</span>
-          </div>
+          </Link>
           <div className="flex flex-col items-center cursor-pointer">
             <ShoppingCartIcon className="h-6 w-6" />
             <span className="text-xs mt-1">My cart</span>

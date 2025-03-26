@@ -1,21 +1,18 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Footer from "./components/footer.jsx";
-import CategoryMenu from "./components/FirstPage/CategoryMenu.jsx";
-import Sidebar from "./components/FirstPage/Sidebar.jsx";
-import ProductGrid from "./components/FirstPage/ProductGrid.jsx";
-import SupplierForm from "./components/FirstPage/SupplierForm.jsx";
-import DealsAndOffers from "./components/FirstPage/DealsAndOffers.jsx";
-import HeroSection from "./components/FirstPage/HeroSection.jsx";
-import RecommendedProducts from "./components/FirstPage/RecommendedItems.jsx";
-import Services from "./components/FirstPage/Services.jsx";
-import ListingHeader from "./components/SecondPage/ListingHeader";
-import Filters from "./components/SecondPage/Filters.jsx";
-import ProductList from "./components/SecondPage/ProductList.jsx";
-import Pagination from "./components/SecondPage/Pagination.jsx";
+import Footer from "./components/Footer";
 import { homeProducts, gadgetsProducts, recommendedProducts, brandproducts } from "./components/data.products.js";
-
+import { CategoryMenu, Sidebar, ProductGrid, SupplierForm, DealsAndOffers, HeroSection, RecommendedProducts, Services } from "./components/FirstPage";
+import { ListingHeader, Filters, ProductList, Pagination } from "./components/SecondPage";
+import Breadcrumb from "./components/Breadcrumb.jsx";
+import ProductDetails from "./components/ProductDetails.jsx";
+import ProductGallery from "./components/ProductGallery.jsx";
+import SupplierInfo from "./components/SupplierInfo.jsx";
+import ProductInfo from "./components/ProductInfo.jsx";
+import ExampleProducts from "./components/ExampleProducts.jsx";
+import RelatedProducts from "./components/RelatedProducts.jsx";
+import DiscountBanner from "./components/DiscountBanner.jsx";
 function HomePage() {
   return (
     <>
@@ -63,12 +60,17 @@ function HomePage() {
 
 function ProductsPage() {
   const [isGridView, setIsGridView] = useState(true);
-  
+
   return (
     <>
       <Navbar />
       <CategoryMenu />
       <main className="container mx-auto px-4 py-8 flex-grow bg-gray-100">
+        {/* Breadcrumb with padding */}
+        <div className="px-4">
+          <Breadcrumb />
+        </div>
+
         <div className="flex gap-8">
           {/* Sidebar (Filters) */}
           <div className="w-1/4">
@@ -88,12 +90,60 @@ function ProductsPage() {
   );
 }
 
+const ProductDetail = () => {
+  return (
+    <>
+    <Navbar />
+    <CategoryMenu />
+    <div className="min-h-screen bg-gray-100 py-3">
+      <div className="max-w-7xl mx-auto px-3">
+        <Breadcrumb />
+        
+        <div className="bg-white p-6 rounded-lg shadow-sm">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-1">
+              <ProductGallery />
+            </div>
+            
+            <div className="lg:col-span-1">
+              <ProductDetails />
+            </div>
+            
+            <div className="lg:col-span-1">
+              <SupplierInfo />
+            </div>
+          </div>
+        </div>
+        
+        <div className="mt-8 grid grid-cols-1 lg:grid-cols-4 gap-8">
+          <div className="lg:col-span-3">
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <ProductInfo />
+            </div>
+          </div>
+          
+          <div className="lg:col-span-1">
+            <ExampleProducts />
+          </div>
+        </div>
+      </div>
+      <div className="bg-gray-100 min-h-screen p-6 mt-8">
+      <RelatedProducts />
+      <DiscountBanner />
+    </div>
+    </div>
+    <Footer showNewsletter={false}/>
+    </>
+  );
+};
+
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/products" element={<ProductsPage />} />
+        <Route path="/product-details" element={<ProductDetail />} />
       </Routes>
     </Router>
   );
