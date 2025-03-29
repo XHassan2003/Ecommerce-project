@@ -112,4 +112,40 @@ export const homeProducts = [
     },
   ];
 
+  export const cartItems = [
+    {
+      id: 1,
+      image: "src/assets/Image/products/1.png",
+      title: "T-shirts with multiple colors, for men and lady",
+      price: 78.99,
+      size: "medium",
+      color: "blue",
+      material: "Plastic",
+      seller: "Artel Market",
+      quantity: 9
+    },
+    {
+      id: 2,
+      image: "src/assets/Image/products/4.png",
+      title: "T-shirts with multiple colors, for men and lady",
+      price: 39.00,
+      size: "medium",
+      color: "blue",
+      material: "Plastic",
+      seller: "Best factory LLC",
+      quantity: 3
+    },
+    {
+      id: 3,
+      image: "src/assets/Image/products/3.png",
+      title: "T-shirts with multiple colors, for men and lady",
+      price: 170.50,
+      size: "medium",
+      color: "blue",
+      material: "Plastic",
+      seller: "Artel Market",
+      quantity: 1
+    }
+  ];
+
 

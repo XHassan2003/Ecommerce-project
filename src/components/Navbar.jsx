@@ -12,7 +12,7 @@ const categories = ["Electronics", "Fashion", "Home", "Books", "Toys"];
 
 export default function Navbar() {
   return (
-    //  Navbar
+    // Navbar
     <header className="bg-white border-b">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-3">
@@ -21,8 +21,9 @@ export default function Navbar() {
           </div>
           <h1 className="text-2xl font-bold text-blue-500">Brand</h1>
         </Link>
-        {/* search bar */}
-        <div className="flex border border-blue-500  overflow-hidden w-[600px]">
+
+        {/* Search Bar */}
+        <div className="flex border border-blue-500 overflow-hidden w-[600px]">
           <input
             type="text"
             placeholder="Search"
@@ -34,12 +35,12 @@ export default function Navbar() {
               <option key={category}>{category}</option>
             ))}
           </select>
-          <button className="w-38  py-1 text-white font-medium bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 transition-all">
+          <button className="w-38 py-1 text-white font-medium bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 transition-all">
             Search
           </button>
         </div>
 
-        {/* all the icons on navbar */}
+        {/* Icons on Navbar */}
         <div className="flex items-center space-x-8 text-gray-500">
           <div className="flex flex-col items-center cursor-pointer">
             <UserIcon className="h-6 w-6" />
@@ -53,13 +54,16 @@ export default function Navbar() {
             to="/product-details"
             className="flex flex-col items-center cursor-pointer"
           >
-            <HeartIcon className="flex flex-col items-center cursor-pointer" />
+            <HeartIcon className="h-6 w-6" />
             <span className="text-xs mt-1">Orders</span>
           </Link>
-          <div className="flex flex-col items-center cursor-pointer">
+          <Link
+            to="/cart"
+            className="flex flex-col items-center cursor-pointer"
+          >
             <ShoppingCartIcon className="h-6 w-6" />
             <span className="text-xs mt-1">My cart</span>
-          </div>
+          </Link>
         </div>
       </div>
     </header>
